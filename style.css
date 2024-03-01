@@ -1,0 +1,33 @@
+.map {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.column {
+    height: 100%;
+    flex-grow: 1;
+    position: relative;
+}
+
+.base {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    
+}
+
+.tileObject {
+    height: 50%;
+    width: 50%;
+    position: absolute;
+    z-index: 2;
+}
