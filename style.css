@@ -31,3 +31,95 @@
     position: absolute;
     z-index: 2;
 }
+
+
+body {
+    margin: 0;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  .container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidebar-left {
+    background-color: #e1b382;
+    border: thick double black;
+    transition: width 0.5s;
+    height: 100%;
+    width: 30%;
+    padding: 8px;
+    box-shadow: 10px 10px 10px 10px #c89666;
+  }
+  
+  .sidebar-left:hover {
+    width: 40%;
+  }
+  
+  .collapse-checkbox {
+    display: none;
+  }
+  
+  .collapse-close {
+    display: none;
+  }
+  
+  .collapse-summary:hover .btn {
+    background: #c89666;
+    cursor: pointer;
+  }
+  
+  .collapse-summary:hover {
+    cursor: pointer;
+  }
+  .collapse[open] .collapse-show {
+    display: none;
+  }
+  
+  .collapse[open] .collapse-close {
+    display: inline-block;
+  }
+  
+  .collapse-checkbox:checked + label .collapse-dropdown {
+    height: 100%;
+    opacity: 1;
+    
+  }
+  
+  .collapse-label {
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .collapse-label .btn {
+    margin-left: auto
+  }
+  
+  .collapse-label:hover {
+    background-color: #c89666;
+  }
+  .btn {
+    padding: 10px 15px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+  }
+  
+  .btn-small {
+    padding: 5px 8px;
+    font-size: 10px;
+    
+  }
+  
+  .image {
+    width: 100%;
+    max-width: 100%;
+  }
+ 
+  .width-100 {
+    width: 100%;
+  }

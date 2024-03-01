@@ -1,6 +1,7 @@
 // add more tiles that layer and adjust their height and width
 import Map from './Map'
 import './style.css'
+import Menu from './Menu'
 
 const map = new Map (3,3)
 const zoneOneData = {
@@ -86,9 +87,20 @@ for (let i = 0; i < zoneOneData.start.length; i++) {
     map.add(zoneOneData.start[i].y, zoneOneData.start[i].x, zoneOneData.start[i].imageUrl, zoneOneData.start[i].type, zoneOneData.start[i].position)   
 }
 
-map.display(map.grid)
+const container = document.createElement('div')
+container.setAttribute('class', 'container')
+document.body.append(container)
+const menu = new Menu()
+menu.display(container)
+menu.add('fa-house', 'UI', 'imageUrls')
+menu.add('fa-clock', 'clock')
+map.display(container)
+
 
 // map.timer(60)
 
 console.table(map.grid)
+
+
+
 

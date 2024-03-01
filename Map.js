@@ -74,15 +74,15 @@ export default class Map {
     /**
      * Displays the piece on the board.
      */
-    display () {
-        const element = document.createElement('div')
-        element.classList.add('map')
+    display (element) {
+        const map = document.createElement('div')
+        map.classList.add('map')
         
         
         for (let i = 0; i < this.grid.length; i++) {
             const row = document.createElement('div')
             row.classList.add('row')
-            element.append(row)
+            map.append(row)
 
             for (let j = 0; j < this.grid[i].length; j++) {
                 const column = document.createElement('div')
@@ -97,7 +97,7 @@ export default class Map {
             }
             
         }
-        document.body.append(element)
+        element.append(map)
     }  
     /**
      * Sets a timer.
