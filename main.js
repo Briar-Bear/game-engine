@@ -4,6 +4,8 @@ import './style.css'
 import Menu from './Menu'
 
 const map = new Map (3,3)
+
+const imageSrc = ['./Game-Assets/Tiles/FieldsTile_32.png','./Game-Assets/Tiles/FieldsTile_38.png','./Game-Assets/Tiles/FieldsTile_06.png']
 const zoneOneData = {
     start: [
     {
@@ -92,8 +94,7 @@ container.setAttribute('class', 'container')
 document.body.append(container)
 const menu = new Menu()
 menu.display(container)
-menu.add('fa-house', 'UI', 'imageUrls')
-menu.add('fa-clock', 'clock')
+menu.add('fa-house', 'UI', imageSrc)
 map.display(container)
 
 

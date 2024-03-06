@@ -1,8 +1,5 @@
-// images is an array of strings
-// loop through the list of images and create itterations of images, every image needs its markup i.e divs around it
-
-const imageUrls = ['./Game-Assets/Tiles/FieldsTile_32.png', './Game-Assets/Tiles/FieldsTile_38.png', './Game-Assets/Tiles/FieldsTile_06.png']
-
+// add css to the images
+// the container can be used to contain my image classes
 export default class Menu {
     constructor (position) {
         this.position = position
@@ -34,6 +31,7 @@ class MenuDetails {
     constructor (icon, text, images) {
         this.icon = icon
         this.text = text
+        this.images = images
     }
 
         display (element) {
@@ -42,6 +40,8 @@ class MenuDetails {
 
         const summary = document.createElement('summary')
         summary.setAttribute('class', 'collapse-summary')
+
+        const container = document.createElement('div')
         
         const showMore = document.createElement('span')
         showMore.setAttribute('class', 'collapse-show')
@@ -54,13 +54,15 @@ class MenuDetails {
         const icon = document.createElement('i')
         icon.setAttribute('class', 'fa-solid ' + this.icon)
 
+       for (let i = 0; i < this.images.length; i++) {
         const image = document.createElement('img')
-        image.setAttribute('class', 'image ' + this.images)
-
-        
+        image.setAttribute('class', 'image')
+        image.setAttribute('src', this.images[i])
+        container.append(image)   
+       }
         element.append(details)
-        details.append(summary)
-        summary.append(icon, this.text, showMore, showLess, image)
+        details.append(summary, container)
+        summary.append(icon, this.text, showMore, showLess)
         
 
     }
