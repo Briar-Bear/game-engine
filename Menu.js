@@ -43,12 +43,6 @@ class MenuDetails {
 
         const container = document.createElement('div')
 
-        const containerRow = document.createElement('div')
-        containerRow.setAttribute('class', 'containerRow')
-
-        const containerColumn = document.createElement('div')
-        containerColumn.setAttribute('class', 'containerColumn')
-
         const tileGroup = document.createElement('div')
         tileGroup.setAttribute('class', 'tileGroup')
 
@@ -71,9 +65,9 @@ class MenuDetails {
        }
         element.append(details)
         details.append(summary, container)
-        container.append(containerRow)
-        containerRow.append(containerColumn)
-        containerColumn.append(tileGroup)
+        container.append(tileGroup)
+      
+   
         
         summary.append(icon, this.text, showMore, showLess)
         
