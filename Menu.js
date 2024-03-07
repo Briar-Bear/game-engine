@@ -42,7 +42,16 @@ class MenuDetails {
         summary.setAttribute('class', 'collapse-summary')
 
         const container = document.createElement('div')
-        
+
+        const containerRow = document.createElement('div')
+        containerRow.setAttribute('class', 'containerRow')
+
+        const containerColumn = document.createElement('div')
+        containerColumn.setAttribute('class', 'containerColumn')
+
+        const tileGroup = document.createElement('div')
+        tileGroup.setAttribute('class', 'tileGroup')
+
         const showMore = document.createElement('span')
         showMore.setAttribute('class', 'collapse-show')
         showMore.textContent = 'Show More'
@@ -57,11 +66,15 @@ class MenuDetails {
        for (let i = 0; i < this.images.length; i++) {
         const image = document.createElement('img')
         image.setAttribute('class', 'image')
-        image.setAttribute('src', this.images[i])
-        container.append(image)   
+        image.setAttribute('src', this.images[i]) 
+        tileGroup.append(image)
        }
         element.append(details)
         details.append(summary, container)
+        container.append(containerRow)
+        containerRow.append(containerColumn)
+        containerColumn.append(tileGroup)
+        
         summary.append(icon, this.text, showMore, showLess)
         
 

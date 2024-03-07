@@ -123,3 +123,16 @@ body {
   .width-100 {
     width: 100%;
   }
+
+  .containerRow {
+    display: flex;
+  }
+
+  .containerColumn {
+    width: 100%
+  }
+
+  .tileGroup {
+    display: flex;
+    gap: 10px;
+  }
