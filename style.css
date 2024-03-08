@@ -54,7 +54,8 @@ body {
     padding: 8px;
     box-shadow: 10px 10px 10px 10px #c89666;
   }
-    
+  
+  
   .collapse-close {
     display: none;
   }
@@ -85,7 +86,7 @@ body {
     padding: 10px 15px;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 5px;
-    margin-left: 180px;
+    margin-left: 201px;
   }
   
   .btn-small {
@@ -111,5 +112,5 @@ body {
 
   .tile-group .image {
     flex: 1 0 0;
-    min-width: 49px;
+    min-width: 40px;
   }
