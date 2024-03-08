@@ -49,19 +49,20 @@ body {
   .sidebar-left {
     background-color: #e1b382;
     border: thick double black;
-    transition: width 0.5s;
     height: 100%;
     width: 30%;
     padding: 8px;
     box-shadow: 10px 10px 10px 10px #c89666;
   }
-  
-  .sidebar-left:hover {
-    width: 40%;
-  }
-  
+    
   .collapse-close {
     display: none;
+  }
+
+  .collapse-summary {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
   }
   
   .collapse-summary:hover .btn {
@@ -80,12 +81,11 @@ body {
     display: inline-block;
   }
 
-  .collapse
-  
-  .btn {
+  .collapse .btn {
     padding: 10px 15px;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 5px;
+    margin-left: 180px;
   }
   
   .btn-small {
