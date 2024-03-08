@@ -1,5 +1,4 @@
-// add css to the images
-// the container can be used to contain my image classes
+// Create a README file
 export default class Menu {
     constructor (position) {
         this.position = position
