@@ -60,10 +60,6 @@ body {
     width: 40%;
   }
   
-  .collapse-checkbox {
-    display: none;
-  }
-  
   .collapse-close {
     display: none;
   }
@@ -83,26 +79,9 @@ body {
   .collapse[open] .collapse-close {
     display: inline-block;
   }
+
+  .collapse
   
-  .collapse-checkbox:checked + label .collapse-dropdown {
-    height: 100%;
-    opacity: 1;
-    
-  }
-  
-  .collapse-label {
-    cursor: pointer;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  .collapse-label .btn {
-    margin-left: auto
-  }
-  
-  .collapse-label:hover {
-    background-color: #c89666;
-  }
   .btn {
     padding: 10px 15px;
     background-color: rgba(255, 255, 255, 0.5);
@@ -124,13 +103,13 @@ body {
     width: 100%;
   }
 
-  .tileGroup {
+  .tile-group {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
   }
 
-  .tileGroup .image {
-    width: 100%;
-    max-width: 100%;
+  .tile-group .image {
+    flex: 1 0 0;
+    min-width: 49px;
   }

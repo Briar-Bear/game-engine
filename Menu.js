@@ -44,14 +44,17 @@ class MenuDetails {
         const container = document.createElement('div')
 
         const tileGroup = document.createElement('div')
-        tileGroup.setAttribute('class', 'tileGroup')
+        tileGroup.setAttribute('class', 'tile-group')
+
+        const btnSmall = document.createElement('span')
+        btnSmall.setAttribute('class', 'btn btn-small')
 
         const showMore = document.createElement('span')
         showMore.setAttribute('class', 'collapse-show')
         showMore.textContent = 'Show More'
 
         const showLess = document.createElement('span')
-        showLess.setAttribute('class', 'collapse-hide')
+        showLess.setAttribute('class', 'collapse-close')
         showLess.textContent = 'Show Less'
         
         const icon = document.createElement('i')
@@ -66,10 +69,8 @@ class MenuDetails {
         element.append(details)
         details.append(summary, container)
         container.append(tileGroup)
-      
-   
-        
-        summary.append(icon, this.text, showMore, showLess)
+        btnSmall.append(showMore, showLess)
+        summary.append(icon, this.text, btnSmall)
         
 
     }
