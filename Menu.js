@@ -1,4 +1,4 @@
-// Create a README file
+
 export default class Menu {
     constructor (position) {
         this.position = position

@@ -2,7 +2,7 @@
 
 ## How to run
 
-```javascript
+```
 npm run dev
 ```
 
