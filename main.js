@@ -161,6 +161,7 @@ const menu = new Menu()
 menu.display(container)
 menu.add('fa-house', 'UI', imageSrc)
 map.display(container)
+map.edit()
 
 
 // map.timer(60)

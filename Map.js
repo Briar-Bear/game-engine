@@ -24,6 +24,8 @@ export default class Map {
            }
         }
 
+        this.columns = {}
+
     }
     /**
      * Adds the piece to the board.
@@ -86,6 +88,8 @@ export default class Map {
 
             for (let j = 0; j < this.grid[i].length; j++) {
                 const column = document.createElement('div')
+                console.log(column)
+                this.columns[i.toString() + j.toString()] = column
                 column.classList.add('column')      
                 row.append(column)
                 
@@ -117,5 +121,19 @@ export default class Map {
                 console.log("Time's up!")
             }
         }, 1000)
+    }
+    edit () {
+        for (let y = 0; y < this.grid.length; y++) {
+            const row = this.grid[y];
+
+            for (let x = 0; x < row.length; x++) {
+                const column = this.columns[y.toString() + x.toString()];
+
+                // give column a click event
+                // edit has to have a call back and you pass x and y to the callback
+            }
+            
+        }
+        console.log(this.columns)
     }
 }
