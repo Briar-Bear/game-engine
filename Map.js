@@ -11,7 +11,7 @@ export default class Map {
      * @param {number} row - Number of rows on the board.
      * @param {number} column - Number of columns on the board.
      */
-    constructor (row, column) {
+    constructor (element, row, column) {
       
         this.grid = []
         for (let i = 0; i < row; i++) {
@@ -24,9 +24,21 @@ export default class Map {
            }
         }
 
+        // store column elements
         this.columns = {}
 
+        // store column handlers
+        this.columnHandlers = {}
+
+        // Currently selected column positions
+        this.selectedColumnPosition = {
+            y: 0,
+            x: 0
+        }
+
+        this.display(element)
     }
+
     /**
      * Adds the piece to the board.
      * @param {number} x - The X axis. 
@@ -35,7 +47,13 @@ export default class Map {
      */
     add (y, x, imageURL, zIndex, type, position) {
         const tile = new Tile (y, x, imageURL, zIndex, type, position)
+
+        // Adds tile to grid
         this.grid[y][x].push(tile)
+
+        const column = this.columns[y.toString() + x.toString()]
+
+        tile.display[column]
         
     }
     /**
@@ -75,32 +93,40 @@ export default class Map {
     }
     /**
      * Displays the piece on the board.
+     * @param {HTMLElement} - Element used to attach map
      */
     display (element) {
         const map = document.createElement('div')
+
+        // style map element
         map.classList.add('map')
-        
-        
-        for (let i = 0; i < this.grid.length; i++) {
+          
+        for (let y = 0; y < this.grid.length; y++) {
             const row = document.createElement('div')
+
+            // style row
             row.classList.add('row')
+
+            // add row to map
             map.append(row)
 
-            for (let j = 0; j < this.grid[i].length; j++) {
+            for (let x = 0; x < this.grid.length; x++) {
                 const column = document.createElement('div')
-                console.log(column)
-                this.columns[i.toString() + j.toString()] = column
-                column.classList.add('column')      
-                row.append(column)
                 
-                for (let k = 0; k < this.grid[i][j].length; k++) {
-                    const tile = this.grid[i][j][k]                   
-                    tile.display(column)               
-                }
+                // storing column element globally
+                this.columns[y.toString() + x.toString()] = column
+
+                // style column
+                column.classList.add('column')    
+                
+                // add column to row
+                row.append(column)
                 
             }
             
         }
+
+        // add map to element
         element.append(map)
     }  
     /**
@@ -127,13 +153,35 @@ export default class Map {
             const row = this.grid[y];
 
             for (let x = 0; x < row.length; x++) {
-                const column = this.columns[y.toString() + x.toString()];
+                // create column id
+                const id = y.toString() + x.toString();
+                // get column element
+                const column = this.columns[id]
+                // create click handler
+                const handler = () => {
+                    this.selectedColumnPosition = { y, x }
+                    column.style.border = '1px solid black'
+                }
 
-                // give column a click event
-                // edit has to have a call back and you pass x and y to the callback
+                // store handler
+                this.columnHandlers[id] = handler
+                // add event listener
+                column.addEventListener('click', handler)
             }
-            
         }
         console.log(this.columns)
+    }
+
+    disableEdit () {
+        for (let y = 0; y < this.grid.length; y++) {
+            const row = this.grid[y];
+
+            for (let x = 0; x < row.length; x++) {
+                const id = y.toString() + x.toString();
+                const column = this.columns[id]
+
+                column.removeEventListener('click', this.columnHandlers[id])
+            }
+        }
     }
 }

@@ -12,10 +12,10 @@ export default class Menu {
         element.append(this.sideBar)
     }
 
-    add (icon, text, images) {
+    add (icon, text, images, map) {
         const details = new MenuDetails (icon, text, images)
 
-       details.display(this.sideBar)
+       details.display(this.sideBar, map)
     }
 }
 
@@ -33,7 +33,7 @@ class MenuDetails {
         this.images = images
     }
 
-        display (element) {
+        display (element, map) {
         const details = document.createElement('details')
         details.setAttribute('class', 'collapse')
 
@@ -60,9 +60,20 @@ class MenuDetails {
         icon.setAttribute('class', 'fa-solid ' + this.icon)
 
        for (let i = 0; i < this.images.length; i++) {
-        const image = document.createElement('img')
-        image.setAttribute('class', 'image')
-        image.setAttribute('src', this.images[i]) 
+        const imageElement = document.createElement('img')
+        const image = this.images[i]
+        imageElement.setAttribute('class', 'image')
+        imageElement.setAttribute('src', image.src) 
+
+        imageElement.addEventListener('click', () => {
+            map.add(
+                map.selectedColumnPosition.y,
+                map.selectedColumnPosition.x,
+                image.src,
+                image.type
+            )
+        })
+
         tileGroup.append(image)
        }
         element.append(details)
