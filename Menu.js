@@ -117,7 +117,7 @@ class MenuDetails {
             )
         })
 
-        // Appends images totileGroup.
+        // Appends images to tileGroup.
         tileGroup.append(image)
        }
 
