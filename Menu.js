@@ -117,7 +117,7 @@ class MenuDetails {
             )
         })
 
-        // Appends Images to tileGroup.
+        // Appends images to tileGroup.
         tileGroup.append(image)
        }
 
@@ -127,8 +127,6 @@ class MenuDetails {
         container.append(tileGroup)
         btnSmall.append(showMore, showLess)
         summary.append(icon, this.text, btnSmall)
-        
-
     }
 }
 
