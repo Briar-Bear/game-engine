@@ -23,16 +23,16 @@ export default class Menu {
 
     /**
      * 
-     * @param {string} icon - An icon that can be attached to the menu.
+     * @param {string} icon - An Icon that can be attached to the menu.
      * @param {string} text Text/Titles for the menu.
      * @param {string} images - Images that can be added to the menu.
-     * @param {object} map - An object that the  menu can be appended to.
+     * @param {object} map - An object that the menu can be appended to.
      */
     add (icon, text, images, map) {
-        // creates a new MenuDetails class
+        // Creates a new MenuDetails class.
         const details = new MenuDetails (icon, text, images)
 
-        // displays the sidebar and map onto details
+        // Displays the sidebar and map onto details.
        details.display(this.sideBar, map)
     }
 }
@@ -41,9 +41,9 @@ export default class Menu {
 class MenuDetails {
     /**
      * @class
-     * @param {string} icon - adds an icon to the menu
-     * @param {string} text - adds text to the menu
-     * @param {string[]} images - an array of image urls
+     * @param {string} icon - Adds an Icon to the menu.
+     * @param {string} text - Adds text to the menu.
+     * @param {string[]} images - An array of Image urls.
      */
     constructor (icon, text, images) {
         this.icon = icon
@@ -52,7 +52,7 @@ class MenuDetails {
     }
         /**
          * 
-         * @param {HTMLElement} element - An element used to display items to the menu.
+         * @param {HTMLElement} element - An element used to display Items to the menu.
          * @param {object} map - An object that the menuDetails can be appended to.
          */
         display (element, map) {
@@ -93,9 +93,9 @@ class MenuDetails {
         // Adds text to the showLess btn.
         showLess.textContent = 'Show Less'
         
-        // Creates the icon HTMLElement.
+        // Creates the Icon HTMLElement.
         const icon = document.createElement('i')
-        // Adds the fa-solid class + the chosen icon to the HTMLElement (using fontawesome icons).
+        // Adds the fa-solid class + the chosen Icon to the HTMLElement (using fontawesome Icons).
         icon.setAttribute('class', 'fa-solid ' + this.icon)
         
        for (let i = 0; i < this.images.length; i++) {
@@ -107,7 +107,7 @@ class MenuDetails {
         // Adds the src class + the image.src[{}] from main.js to the HTMLElement.
         imageElement.setAttribute('src', image.src) 
 
-        // An eventlistener that adds x and y coords to the map and the image type and image source.
+        // An eventlistener that adds x and y coords to the map and the image.type and image.src.
         imageElement.addEventListener('click', () => {
             map.add(
                 map.selectedColumnPosition.y,
@@ -117,7 +117,7 @@ class MenuDetails {
             )
         })
 
-        // Appends images to tileGroup.
+        // Appends Images to tileGroup.
         tileGroup.append(image)
        }
 
