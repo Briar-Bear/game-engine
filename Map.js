@@ -166,10 +166,19 @@ export default class Map {
                     column.style.border = '1px solid black'
                 }
 
-                // store handler
+                // A handler to remove the border
+                const borderHandler = () => {
+                    this.selectedColumnPosition = { y, x }
+                    column.style.border = 'none'
+                }
+
+                // store handlers
                 this.columnHandlers[id] = handler
+                this.columnHandlers[id] = borderHandler
                 // add event listener
                 column.addEventListener('click', handler)
+
+                column.addEventListener('dblclick', borderHandler) 
             }
         }
         console.log(this.columns)
