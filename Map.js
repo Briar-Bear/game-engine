@@ -175,9 +175,9 @@ export default class Map {
                 // store handlers
                 this.columnHandlers[id] = handler
                 this.columnHandlers[id] = borderHandler
-                // add event listener
+                // event listener that targets tiles and border style
                 column.addEventListener('click', handler)
-
+                // event listener that targets tiles and removes style
                 column.addEventListener('dblclick', borderHandler) 
             }
         }
