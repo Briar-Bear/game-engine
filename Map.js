@@ -36,7 +36,7 @@ export default class Map {
             x: 0
         }
 
-        this.display(element)
+        // this.display(element)
     }
 
     /**
@@ -53,7 +53,7 @@ export default class Map {
 
         const column = this.columns[y.toString() + x.toString()]
 
-        tile.display[column]
+       
         
     }
     /**
@@ -148,6 +148,9 @@ export default class Map {
             }
         }, 1000)
     }
+    /**
+     * Edits items on the map.
+     */
     edit () {
         for (let y = 0; y < this.grid.length; y++) {
             const row = this.grid[y];
@@ -171,7 +174,9 @@ export default class Map {
         }
         console.log(this.columns)
     }
-
+    /**
+     * Disables edits made on the map.
+     */
     disableEdit () {
         for (let y = 0; y < this.grid.length; y++) {
             const row = this.grid[y];

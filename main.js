@@ -5,7 +5,7 @@ import Menu from './Menu'
 
 const container = document.createElement('div')
 
-const menu = new Menu()
+
 const map = new Map (container, 3, 3)
 
 const imageSrc = [
@@ -360,7 +360,7 @@ map.selectedColumnPosition.y
 map.selectedColumnPosition.x
 container.setAttribute('class', 'container')
 document.body.append(container)
-
+const menu = new Menu()
 menu.display(container, map)
 menu.add('fa-house', 'UI', imageSrc)
 map.display(container)

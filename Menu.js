@@ -118,7 +118,7 @@ class MenuDetails {
         })
 
         // Appends images to tileGroup.
-        tileGroup.append(image)
+        tileGroup.append(imageElement)
        }
 
        // Various different appends.
