@@ -1,4 +1,4 @@
-// when i add the border i need to store the column style and then remove it.
+// when i add the border i need to store the column style and then remove it. COMPLETE Map.js lines 170 + 181
 // work on the css
 import Map from './Map'
 import './style.css'
