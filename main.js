@@ -1,4 +1,5 @@
-// add more tiles that layer and adjust their height and width
+// when i add the border i need to store the column style and then remove it.
+// work on the css
 import Map from './Map'
 import './style.css'
 import Menu from './Menu'
@@ -266,103 +267,13 @@ const imageSrc = [
         src: './Game-Assets/Tiles/FieldsTile_64.png'
     },
 ]
-const zoneOneData = {
-    start: [
-    {
-        y: 0,
-        x: 0,
-        imageUrl: './Game-Assets/Tiles/FieldsTile_38.png',
-        type: 'base'              
-    },
-    {
-        y: 0,
-        x: 0,
-        imageUrl: './Game-Assets/Objects/Decor/Tree2.png'  ,
-        type: 'tileObject',
-        position: {right: '10%'}             
-    },
-    {
-        y: 0,
-        x: 1,
-        imageUrl: './Game-Assets/Tiles/FieldsTile_38.png',
-        type: 'base' 
 
-    },
-    {
-        y: 0,
-        x: 2,
-        imageUrl: './Game-Assets/Tiles/FieldsTile_38.png',
-        type: 'base' 
-    },
-    {
-        y: 1,
-        x: 0,
-        imageUrl: './Game-Assets/Tiles/FieldsTile_38.png',
-        type: 'base' 
-    },
-    {
-        y: 1,
-        x: 1,
-        imageUrl: './Game-Assets/Tiles/FieldsTile_06.png',
-        type: 'base' 
-    },
-    {
-        y: 1,
-        x: 2,
-        imageUrl: './Game-Assets/Tiles/FieldsTile_39.png',
-        type: 'base' 
-    },
-    {
-        y: 2,
-        x: 0,
-        imageUrl: './Game-Assets/Tiles/FieldsTile_38.png',
-        type: 'base' 
-    },
-    {
-        y: 2,
-        x: 0,
-        imageUrl: './Game-Assets/Objects/Stone/9.png',
-        type: 'tileObject' 
-    },
-    {
-        y: 2,
-        x: 1,
-        imageUrl: './Game-Assets/Tiles/FieldsTile_32.png',
-        type: 'base' 
-    },
-    {
-        y: 2,
-        x: 2,
-        imageUrl: './Game-Assets/Tiles/FieldsTile_38.png',
-        type: 'base' 
-    },
-    {
-        y: 2,
-        x: 2,
-        imageUrl: './Game-Assets/Objects/Camp/5.png',
-        type: 'tileObject' 
-    }
-    ]
-}
 
-for (let i = 0; i < zoneOneData.start.length; i++) {   
-    map.add
-    (
-        zoneOneData.start[i].y,
-        zoneOneData.start[i].x,
-        zoneOneData.start[i].imageUrl,
-        zoneOneData.start[i].type,
-        zoneOneData.start[i].position
-    )   
-}
-
-map.selectedColumnPosition.y
-map.selectedColumnPosition.x
 container.setAttribute('class', 'container')
 document.body.append(container)
 const menu = new Menu()
-menu.display(container, map)
-menu.add('fa-house', 'UI', imageSrc)
+menu.display(container)
+menu.add('fa-house', 'UI', imageSrc, map)
 map.display(container)
 map.edit()
 

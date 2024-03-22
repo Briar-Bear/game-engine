@@ -45,15 +45,15 @@ export default class Map {
      * @param {number} y - The Y axis.
      * @param {string} piece - The item that sits on the board.
      */
-    add (y, x, imageURL, zIndex, type, position) {
-        const tile = new Tile (y, x, imageURL, zIndex, type, position)
+    add (y, x, imageURL, type, zIndex) {
+        const tile = new Tile (y, x, imageURL, type, zIndex)
 
         // Adds tile to grid
         this.grid[y][x].push(tile)
 
         const column = this.columns[y.toString() + x.toString()]
 
-       
+       tile.display(column)
         
     }
     /**
