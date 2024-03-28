@@ -162,23 +162,22 @@ export default class Map {
                 const column = this.columns[id]
                 // create click handler
                 const handler = () => {
+                    this.previousColumnPosition = this.selectedColumnPosition
                     this.selectedColumnPosition = { y, x }
                     column.style.border = '1px solid black'
-                }
 
-                // A handler to remove the border
-                const borderHandler = () => {
-                    this.selectedColumnPosition = { y, x }
-                    column.style.border = 'none'
+                    const prevColumn = this.columns
+                    [
+                        this.previousColumnPosition.y.toString() +
+                        this.previousColumnPosition.x.toString()
+                    ]
+                    prevColumn.style.border = 'none'
                 }
 
                 // store handlers
                 this.columnHandlers[id] = handler
-                this.columnHandlers[id] = borderHandler
                 // event listener that targets tiles and border style
                 column.addEventListener('click', handler)
-                // event listener that targets tiles and removes style
-                column.addEventListener('dblclick', borderHandler) 
             }
         }
         console.log(this.columns)
